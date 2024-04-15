@@ -54,8 +54,7 @@ class DataTransformation {
         } 
         if (this.datatypes[typeof a] === this.datatypes.string
              && this.datatypes[typeof b] === this.datatypes.string 
-             || Array.isArray(a) 
-             || Array.isArray(b)) {
+        ){
             return String(a) + String(b);
         } else {
             throw new Error("Addition is not possible with provided types");
