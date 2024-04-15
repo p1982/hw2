@@ -53,7 +53,7 @@ class DataTransformation {
             return a + b;
         } 
         if (this.datatypes[typeof a] === this.datatypes.string
-             || this.datatypes[typeof b] === this.datatypes.string 
+             && this.datatypes[typeof b] === this.datatypes.string 
              || Array.isArray(a) 
              || Array.isArray(b)) {
             return String(a) + String(b);
@@ -114,44 +114,44 @@ class DataTransformation {
 const transformator = new DataTransformation()
 
 try {
-    // console.log(transformator.addValues(5, 10)); // виведе: 15
-    // console.log(transformator.addValues("Hello", "World")); // виведе: HelloWorld
-    // console.log(transformator.addValues(5, "World")); // виведе: '5World'
-    // console.log(transformator.addValues([], 1)) // виведе: '1'
-    // console.log(transformator.addValues([], 0))// виведе: '0'
-    // console.log(transformator.addValues(['Hello'], 0))// виведе: 'Hello0'
-    // console.log(transformator.addValues(1, []))// виведе: '1'
-    // console.log(transformator.addValues(1, ['Hello']))// виведе: '1Hello'
-    // console.log(transformator.addValues(0, ['Hello']))// виведе: '0Hello'
-    // console.log(transformator.addValues({}, 1))// виведе: помилка
-    // console.log(transformator.addValues(1, {}))// виведе: помилка
-    // console.log(transformator.addValues(null, 1))// виведе: '1'
-    // console.log(transformator.addValues(undefined, 1))// виведе: помилка
-    // console.log(transformator.addValues("Hello", null))// виведе: 'Hellonull'
-    // console.log(transformator.addValues("Hello", undefined))// виведе: 'Helloundefined'
-    // console.log(transformator.addValues("Hello", function () { }))// виведе: 'Hellofunction(){}'
-    // console.log(transformator.addValues(function () { }, 1))// виведе: 'function(){}1'
+    console.log(transformator.addValues(5, 10)); // виведе: 15
+    console.log(transformator.addValues("Hello", "World")); // виведе: HelloWorld
+    console.log(transformator.addValues(5, "World")); // виведе: '5World'
+    console.log(transformator.addValues([], 1)) // виведе: '1'
+    console.log(transformator.addValues([], 0))// виведе: '0'
+    console.log(transformator.addValues(['Hello'], 0))// виведе: 'Hello0'
+    console.log(transformator.addValues(1, []))// виведе: '1'
+    console.log(transformator.addValues(1, ['Hello']))// виведе: '1Hello'
+    console.log(transformator.addValues(0, ['Hello']))// виведе: '0Hello'
+    console.log(transformator.addValues({}, 1))// виведе: помилка
+    console.log(transformator.addValues(1, {}))// виведе: помилка
+    console.log(transformator.addValues(null, 1))// виведе: '1'
+    console.log(transformator.addValues(undefined, 1))// виведе: помилка
+    console.log(transformator.addValues("Hello", null))// виведе: 'Hellonull'
+    console.log(transformator.addValues("Hello", undefined))// виведе: 'Helloundefined'
+    console.log(transformator.addValues("Hello", function () { }))// виведе: 'Hellofunction(){}'
+    console.log(transformator.addValues(function () { }, 1))// виведе: 'function(){}1'
     console.log(transformator.addValues(52858825284848254874818517471744n, 52858825284848254874818517471744n))// виведе: 'function(){}52858825284848254874818517471744'
     console.log(transformator.addValues(function () { }, 52858825284848254874818517471744n))// виведе: 'function(){}52858825284848254874818517471744'
     console.log(transformator.addValues(1, 52858825284848254874818517471744n))// виведе: 'помилка'
     
     
-    // console.log(transformator.invertBoolean(0))//true
-    // console.log(transformator.invertBoolean(-0))//true
-    // console.log(transformator.invertBoolean(""))//true
-    // console.log(transformator.invertBoolean(false))//true
-    // console.log(transformator.invertBoolean("hbgvfcd"))//false
-    // console.log(transformator.invertBoolean(NaN))//true
-    // console.log(transformator.invertBoolean(null))//true
-    // console.log(transformator.invertBoolean(undefined))//true
-    // console.log(transformator.invertBoolean({}))//false
+    console.log(transformator.invertBoolean(0))//true
+    console.log(transformator.invertBoolean(-0))//true
+    console.log(transformator.invertBoolean(""))//true
+    console.log(transformator.invertBoolean(false))//true
+    console.log(transformator.invertBoolean("hbgvfcd"))//false
+    console.log(transformator.invertBoolean(NaN))//true
+    console.log(transformator.invertBoolean(null))//true
+    console.log(transformator.invertBoolean(undefined))//true
+    console.log(transformator.invertBoolean({}))//false
 
-    // console.log(transformator.addValues(5, 10)); // виведе: 15
-    // console.log(transformator.addValues("Hello", "World")); // виведе: HelloWorld
-    // console.log(transformator.stringifyValue({ key: "value" })); // виведе: [object Object]
-    // console.log(transformator.invertBoolean(true)); // виведе: false
-    // console.log(transformator.convertToNumber("10")); // виведе: 10
-    // console.log(transformator.coerceToType("true", "boolean")); // виведе: true
+    console.log(transformator.addValues(5, 10)); // виведе: 15
+    console.log(transformator.addValues("Hello", "World")); // виведе: HelloWorld
+    console.log(transformator.stringifyValue({ key: "value" })); // виведе: [object Object]
+    console.log(transformator.invertBoolean(true)); // виведе: false
+    console.log(transformator.convertToNumber("10")); // виведе: 10
+    console.log(transformator.coerceToType("true", "boolean")); // виведе: true
 } catch (error) {
     console.error(error.message);
 }
